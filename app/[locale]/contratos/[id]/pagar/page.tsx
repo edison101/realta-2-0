@@ -39,7 +39,6 @@ interface Payment {
 
 export default function PaymentPage() {
   const params = useParams()
-  const router = useRouter()
   const contractId = params.id as string
 
   const [contract, setContract] = useState<Contract | null>(null)
