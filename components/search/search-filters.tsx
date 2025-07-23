@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -30,7 +30,7 @@ const countries = [
   { value: "CR", label: "Costa Rica" },
 ]
 
-export function SearchFilters() {
+function SearchFiltersInner() {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
@@ -351,5 +351,13 @@ export function SearchFilters() {
         Buscar
       </Button>
     </div>
+  )
+}
+
+export function SearchFilters() {
+  return (
+    <Suspense fallback={<div className="h-12 bg-gray-100 rounded-lg animate-pulse"></div>}>
+      <SearchFiltersInner />
+    </Suspense>
   )
 }

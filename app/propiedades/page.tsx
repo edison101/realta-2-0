@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, Suspense } from "react"
 import { createClient } from "@/lib/supabase/client"
 import { currencyConverter } from "@/lib/currency/converter"
 import { PropertyCard } from "@/components/property/property-card"
@@ -8,7 +8,7 @@ import { SearchFilters } from "@/components/search/search-filters"
 import { CurrencySelector } from "@/components/currency/currency-selector"
 import { useSearchParams } from "next/navigation"
 
-export default function PropertiesPage() {
+function PropertiesPageInner() {
   const searchParams = useSearchParams()
   const [properties, setProperties] = useState<any[]>([])
   const [loading, setLoading] = useState(true)
@@ -119,5 +119,13 @@ export default function PropertiesPage() {
         </div>
       )}
     </div>
+  )
+}
+
+export default function PropertiesPage() {
+  return (
+    <Suspense fallback={<div className="text-center py-12">Cargando propiedades...</div>}>
+      <PropertiesPageInner />
+    </Suspense>
   )
 }

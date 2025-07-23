@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useState, Suspense } from "react"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -23,7 +23,7 @@ interface CurrencySelectorProps {
   currentCurrency: string
 }
 
-export function CurrencySelector({ currentCurrency }: CurrencySelectorProps) {
+function CurrencySelectorInner({ currentCurrency }: CurrencySelectorProps) {
   const router = useRouter()
   const searchParams = useSearchParams()
   const [isOpen, setIsOpen] = useState(false)
@@ -66,5 +66,13 @@ export function CurrencySelector({ currentCurrency }: CurrencySelectorProps) {
         ))}
       </DropdownMenuContent>
     </DropdownMenu>
+  )
+}
+
+export function CurrencySelector({ currentCurrency }: CurrencySelectorProps) {
+  return (
+    <Suspense fallback={<div className="h-10 w-24 bg-gray-100 rounded-lg animate-pulse"></div>}>
+      <CurrencySelectorInner currentCurrency={currentCurrency} />
+    </Suspense>
   )
 }
