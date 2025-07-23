@@ -2,10 +2,12 @@ import { type NextRequest, NextResponse } from "next/server"
 import { requireAuth } from "@/lib/auth/auth-helpers"
 import { createServerSupabaseClient } from "@/lib/supabase/server"
 
+export const dynamic = 'force-dynamic'
+
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const user = await requireAuth()
-    const supabase = createServerSupabaseClient()
+    const supabase = await createServerSupabaseClient()
     const { status, owner_notes } = await request.json()
 
     // Validar que el usuario sea propietario
@@ -65,7 +67,7 @@ export async function PATCH(request: NextRequest, { params }: { params: { id: st
 export async function GET(request: NextRequest, { params }: { params: { id: string } }) {
   try {
     const user = await requireAuth()
-    const supabase = createServerSupabaseClient()
+    const supabase = await createServerSupabaseClient()
 
     // Obtener la solicitud con información relacionada
     const { data: application, error } = await supabase

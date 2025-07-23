@@ -1,6 +1,8 @@
 import { type NextRequest, NextResponse } from "next/server"
 import { createServerSupabaseClient } from "@/lib/supabase/server"
 
+export const dynamic = 'force-dynamic'
+
 // Esta función se ejecutará cada hora para actualizar las tasas de cambio
 export async function GET(request: NextRequest) {
   try {
@@ -10,7 +12,7 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: "Unauthorized" }, { status: 401 })
     }
 
-    const supabase = createServerSupabaseClient()
+    const supabase = await createServerSupabaseClient()
 
     // En producción, aquí consumirías una API real como Open Exchange Rates
     // Para el ejemplo, simularemos fluctuaciones realistas

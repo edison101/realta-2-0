@@ -98,3 +98,14 @@ export async function getAccountStatus(accountId: string) {
     payoutsEnabled: account.payouts_enabled || false,
   }
 }
+
+export async function createPrice(productId: string, amount: number, currency: string) {
+  return await stripe.prices.create({
+    product: productId,
+    unit_amount: amount,
+    currency: currency.toLowerCase(),
+    recurring: {
+      interval: "month",
+    },
+  })
+}

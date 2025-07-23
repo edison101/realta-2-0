@@ -2,10 +2,12 @@ import { type NextRequest, NextResponse } from "next/server"
 import { requireAuth } from "@/lib/auth/auth-helpers"
 import { createServerSupabaseClient } from "@/lib/supabase/server"
 
+export const dynamic = 'force-dynamic'
+
 export async function POST(request: NextRequest) {
   try {
     const user = await requireAuth()
-    const supabase = createServerSupabaseClient()
+    const supabase = await createServerSupabaseClient()
 
     const data = await request.json()
 
@@ -71,7 +73,7 @@ export async function POST(request: NextRequest) {
 export async function GET(request: NextRequest) {
   try {
     const user = await requireAuth()
-    const supabase = createServerSupabaseClient()
+    const supabase = await createServerSupabaseClient()
     const { searchParams } = new URL(request.url)
 
     const status = searchParams.get("status")

@@ -30,3 +30,6 @@ export async function createClient() {
     },
   })
 }
+
+// Alias para compatibilidad con imports existentes
+export const createServerSupabaseClient = createClient
