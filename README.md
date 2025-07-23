@@ -1,36 +1,125 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🏡 Realta 2.0 - Plataforma Inmobiliaria Global
 
-## Getting Started
+Una plataforma moderna para alquiler de propiedades en Latinoamérica, desarrollada con Next.js 14, TypeScript, Supabase y Stripe.
 
-First, run the development server:
+## ✨ Características Principales
 
+- 🔐 **Autenticación completa** con Supabase
+- 🏠 **Gestión de propiedades** con filtros avanzados
+- 💳 **Pagos seguros** con Stripe
+- 💬 **Chat en tiempo real** entre propietarios e inquilinos
+- 📱 **Responsive design** para móviles y desktop
+- 🌍 **Multi-moneda** para mercados latinoamericanos
+- 📄 **Contratos digitales** y aplicaciones de renta
+- ⭐ **Sistema de reseñas** y calificaciones
+- 🔔 **Notificaciones** en tiempo real
+
+## 🚀 Inicio Rápido
+
+### Prerrequisitos
+
+- Node.js 18+ 
+- npm o yarn
+- Cuenta en Supabase
+- Cuenta en Stripe (opcional)
+
+### Instalación
+
+1. **Clona el repositorio**
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone <repository-url>
+cd realta-2.0
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. **Instala dependencias**
+```bash
+npm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. **Configura variables de entorno**
+```bash
+cp .env.example .env.local
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Edita `.env.local` con tus credenciales:
+- Supabase URL y keys
+- Stripe keys (opcional)
+- Otras configuraciones
 
-## Learn More
+4. **Ejecuta la aplicación**
+```bash
+npm run dev
+```
 
-To learn more about Next.js, take a look at the following resources:
+La aplicación estará disponible en `http://localhost:3000`
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🛠 Stack Tecnológico
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- **Framework**: Next.js 14 (App Router)
+- **Lenguaje**: TypeScript
+- **Estilos**: Tailwind CSS
+- **UI Components**: Radix UI
+- **Base de datos**: Supabase (PostgreSQL)
+- **Autenticación**: Supabase Auth
+- **Pagos**: Stripe
+- **Iconos**: Lucide React
+- **Internacionalización**: next-intl
 
-## Deploy on Vercel
+## 🌐 Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recomendado)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+1. **Conecta con GitHub**
+2. **Importa el proyecto** en Vercel
+3. **Configura variables de entorno** en Vercel dashboard
+4. **Deploy automático** en cada push
+
+### Variables de entorno requeridas:
+- `NEXT_PUBLIC_SUPABASE_URL`
+- `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+- `SUPABASE_SERVICE_ROLE_KEY`
+- `NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY` (opcional)
+- `STRIPE_SECRET_KEY` (opcional)
+
+## 📋 Scripts Disponibles
+
+```bash
+npm run dev          # Desarrollo
+npm run build        # Build para producción
+npm run start        # Servidor de producción
+npm run lint         # Linting
+```
+
+## 🗄 Base de Datos
+
+Los scripts SQL están en `/scripts/`. Ejecutar en orden:
+
+1. `01-initial-schema.sql` - Schema inicial
+2. `02-seed-sample-data.sql` - Datos de prueba
+3. `03-setup-rls.sql` - Row Level Security
+4. `04-guatemala-data.sql` - Datos específicos
+5. Y así sucesivamente...
+
+## 🔧 Configuración
+
+### Supabase Setup
+
+1. Crear proyecto en [Supabase](https://supabase.com)
+2. Ejecutar scripts SQL
+3. Configurar RLS policies
+4. Obtener credenciales
+
+### Stripe Setup (Opcional)
+
+1. Crear cuenta en [Stripe](https://stripe.com)
+2. Obtener API keys
+3. Configurar webhooks
+4. Configurar productos/precios
+
+## 📝 Licencia
+
+Este proyecto está licenciado bajo la licencia MIT.
+
+---
+
+**¡Desarrollado con ❤️ para el mercado inmobiliario latinoamericano!**

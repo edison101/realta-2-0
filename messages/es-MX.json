@@ -1,0 +1,107 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "save": "Guardar",
+    "edit": "Editar",
+    "delete": "Eliminar",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "sort": "Ordenar",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "close": "Cerrar"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "search": "Buscar",
+    "dashboard": "Panel",
+    "profile": "Perfil",
+    "login": "Iniciar Sesión",
+    "register": "Registrarse",
+    "logout": "Cerrar Sesión"
+  },
+  "property": {
+    "title": "Propiedades",
+    "featured": "Destacadas",
+    "recent": "Recientes",
+    "type": {
+      "APARTMENT": "Departamento",
+      "HOUSE": "Casa",
+      "CONDO": "Condominio",
+      "STUDIO": "Estudio",
+      "ROOM": "Habitación"
+    },
+    "details": {
+      "bedrooms": "Recámaras",
+      "bathrooms": "Baños",
+      "area": "Área",
+      "price": "Precio",
+      "location": "Ubicación",
+      "amenities": "Amenidades",
+      "description": "Descripción"
+    },
+    "status": {
+      "DRAFT": "Borrador",
+      "ACTIVE": "Activa",
+      "RENTED": "Rentada",
+      "MAINTENANCE": "Mantenimiento",
+      "INACTIVE": "Inactiva"
+    },
+    "actions": {
+      "viewDetails": "Ver Detalles",
+      "contact": "Contactar",
+      "rent": "Rentar",
+      "favorite": "Favorito"
+    }
+  },
+  "currency": {
+    "convert": "Convertir moneda",
+    "original": "Precio original",
+    "converted": "Precio convertido",
+    "rate": "Tasa de cambio",
+    "lastUpdated": "Última actualización"
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar Sesión",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "submit": "Entrar",
+      "forgotPassword": "¿Olvidaste tu contraseña?",
+      "noAccount": "¿No tienes cuenta? Regístrate"
+    },
+    "register": {
+      "title": "Crear Cuenta",
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo electrónico",
+      "password": "Contraseña",
+      "confirmPassword": "Confirmar contraseña",
+      "phone": "Teléfono",
+      "country": "País",
+      "currency": "Moneda preferida",
+      "submit": "Registrarse",
+      "hasAccount": "¿Ya tienes cuenta? Inicia sesión"
+    }
+  },
+  "dashboard": {
+    "welcome": "Bienvenido, {name}",
+    "stats": {
+      "totalProperties": "Total de Propiedades",
+      "activeRentals": "Rentas Activas",
+      "monthlyIncome": "Ingresos Mensuales",
+      "occupancyRate": "Tasa de Ocupación"
+    },
+    "sections": {
+      "properties": "Mis Propiedades",
+      "contracts": "Contratos",
+      "payments": "Pagos",
+      "reports": "Reportes"
+    }
+  }
+}
