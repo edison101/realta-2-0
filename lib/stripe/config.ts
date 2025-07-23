@@ -1,18 +1,18 @@
 import Stripe from "stripe"
 
 if (!process.env.STRIPE_SECRET_KEY) {
-  throw new Error("STRIPE_SECRET_KEY is not set")
+  console.warn("STRIPE_SECRET_KEY is not set - Stripe features will be disabled")
 }
 
-export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, {
+export const stripe = new Stripe(process.env.STRIPE_SECRET_KEY || "sk_test_placeholder", {
   apiVersion: "2024-06-20",
   typescript: true,
 })
 
 export const STRIPE_CONFIG = {
-  publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY!,
-  webhookSecret: process.env.STRIPE_WEBHOOK_SECRET!,
-  appUrl: process.env.NEXT_PUBLIC_APP_URL!,
+  publishableKey: process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY || "",
+  webhookSecret: process.env.STRIPE_WEBHOOK_SECRET || "",
+  appUrl: process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000",
 }
 
 // Configuración por país
