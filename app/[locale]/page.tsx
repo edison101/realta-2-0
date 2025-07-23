@@ -17,7 +17,7 @@ interface PageProps {
 }
 
 export default async function HomePage({ params, searchParams }: PageProps) {
-  const supabase = createServerSupabaseClient()
+  const supabase = await createServerSupabaseClient()
 
   // Determinar moneda preferida del usuario
   const preferredCurrency = searchParams.currency || "USD"
