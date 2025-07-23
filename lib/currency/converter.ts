@@ -8,6 +8,19 @@ interface CurrencyConversion {
   formattedConverted: string
 }
 
+export const LATIN_AMERICAN_CURRENCIES = [
+  { code: "USD", name: "Dólar Estadounidense", symbol: "$", flag: "🇺🇸" },
+  { code: "GTQ", name: "Quetzal Guatemalteco", symbol: "Q", flag: "🇬🇹" },
+  { code: "MXN", name: "Peso Mexicano", symbol: "$", flag: "🇲🇽" },
+  { code: "ARS", name: "Peso Argentino", symbol: "$", flag: "🇦🇷" },
+  { code: "BRL", name: "Real Brasileño", symbol: "R$", flag: "🇧🇷" },
+  { code: "COP", name: "Peso Colombiano", symbol: "$", flag: "🇨🇴" },
+  { code: "CLP", name: "Peso Chileno", symbol: "$", flag: "🇨🇱" },
+  { code: "PEN", name: "Sol Peruano", symbol: "S/", flag: "🇵🇪" },
+  { code: "CRC", name: "Colón Costarricense", symbol: "₡", flag: "🇨🇷" },
+  { code: "UYU", name: "Peso Uruguayo", symbol: "$", flag: "🇺🇾" },
+]
+
 class CurrencyConverter {
   private exchangeRates: Record<string, number> = {
     USD: 1,

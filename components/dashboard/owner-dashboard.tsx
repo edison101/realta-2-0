@@ -390,3 +390,5 @@ export function OwnerDashboard({ user, properties, contracts, transactions, stat
     </div>
   )
 }
+
+export default OwnerDashboard

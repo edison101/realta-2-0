@@ -412,3 +412,5 @@ export function TenantDashboard({ user, currentRental, paymentHistory, locale }:
     </div>
   )
 }
+
+export default TenantDashboard

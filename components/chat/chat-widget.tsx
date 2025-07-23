@@ -18,7 +18,7 @@ interface ChatWidgetProps {
   tenantId?: string
 }
 
-export default function ChatWidget({ conversationId, propertyId, ownerId, tenantId }: ChatWidgetProps) {
+function ChatWidget({ conversationId, propertyId, ownerId, tenantId }: ChatWidgetProps) {
   const [isOpen, setIsOpen] = useState(false)
   const [isMinimized, setIsMinimized] = useState(false)
   const [messages, setMessages] = useState<ChatMessage[]>([])
@@ -210,3 +210,6 @@ export default function ChatWidget({ conversationId, propertyId, ownerId, tenant
     </Card>
   )
 }
+
+export { ChatWidget }
+export default ChatWidget

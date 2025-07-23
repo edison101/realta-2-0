@@ -15,7 +15,7 @@ import {
 import { ScrollArea } from "@/components/ui/scroll-area"
 import type { Notification } from "@/lib/notifications/service"
 
-export default function NotificationBell() {
+function NotificationBell() {
   const [notifications, setNotifications] = useState<Notification[]>([])
   const [unreadCount, setUnreadCount] = useState(0)
   const [loading, setLoading] = useState(false)
@@ -157,3 +157,6 @@ export default function NotificationBell() {
     </DropdownMenu>
   )
 }
+
+export { NotificationBell }
+export default NotificationBell
